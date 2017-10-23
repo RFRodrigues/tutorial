@@ -170,7 +170,7 @@ namespace MvcMovie.Controllers
             var movie = await _context.Movie.SingleOrDefaultAsync(m => m.ID == id);
             _context.Movie.Remove(movie);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index");
         }
 
         private bool MovieExists(int id)
